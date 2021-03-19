@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-2-1</title>
+</head>
+
+<body>
+    <script>
+        let cat = {
+            'legs': '4', //有''也可以不用
+            name: 'kiki',
+            color: 'black',
+            ability: {
+                jump: function () {
+                    console.log('jump!');
+                },
+                sound: function () {
+                    console.log('Meow~');
+                },
+                sleep: function () {
+                    console.log('ZZZzzz...');
+                }
+            }
+        }
+        console.log(cat.legs);
+        console.log(cat.color);
+        cat.ability.sound();
+        cat.ability.sleep();
+
+
+    </script>
+</body>
+
+</html>

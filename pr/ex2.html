@@ -5,15 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8-2-4</title>
+    <title>Document</title>
 </head>
 
 <body>
     <script>
-        for (let i = 1; i < 10; i++) {
-            for (let j = 1; j < 10; j++)
-                console.log(i * j);
+
+        //設計一個從新排9487次['a','b','c','d']
+        let arr = ['a', 'b', 'c', 'd']
+        for (let i = 1; i <= 9487; i++) {
+            let num = arr.pop();
+            arr.unshift(num);
         }
+        console.log(arr);
+
+
+
     </script>
 </body>
 

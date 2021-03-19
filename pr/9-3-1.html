@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 9-3-1</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            fname: 'Marry',
+            lname: 'Tsai',
+            age: '20',
+            lineId: 'marryme'
+        };
+        for (let attr in obj) {
+            console.log(`${attr}`);
+
+        }
+        for (let attr in obj) {
+            console.log(obj[attr]);
+        }
+        //attr可以自己設定
+
+
+
+
+
+
+        let arr = ['a', 'b', 'c'];
+        for (let key in arr) {
+            console.log(`${key}`);
+        };
+        for (let value of arr) {
+            console.log(`${value}`);
+        };
+//of 只能用在有順序ex:0123
+    </script>
+</body>
+
+</html>

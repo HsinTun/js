@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let cat = {
+            'legs': '4', //有''也可以不用
+            name: 'kiki',
+            color: 'black',
+            ability: {
+                jump: function () {
+                    console.log('jump!');
+                },
+                sound: function () {
+                    console.log('Meow~');
+                },
+                sleep: function () {
+                    console.log('ZZZzzz...');
+                }
+            }
+        }
+        cat['eye_color'] = 'black';
+        cat.habbit = 'play with slave';
+
+        // console.dir 可以列出物件（或陣列）的內容
+        console.dir(cat, { dapth: null });
+
+        console.log(cat.color);
+        console.log('eye_color');
+        console.log(cat.habbit);
+        cat.ability.sleep();
+
+        let i = 0
+        console.log(i++);//0
+        console.log(++i);//1
+        console.log(i);
+
+
+    </script>
+</body>
+
+</html>
