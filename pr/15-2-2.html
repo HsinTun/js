@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="txt">時間開始</p>
+    <script>
+
+        var p = document.getElementById('txt');
+        setTimeout(function () {
+
+            p.innerText = "2秒"
+        }, 2000);
+        setTimeout(function () {
+            p.innerText = "4秒"
+
+        }, 4000);
+        setTimeout(function () {
+            p.innerText = "6秒"
+
+        }, 6000);
+
+
+
+    </script>
+</body>
+
+</html>

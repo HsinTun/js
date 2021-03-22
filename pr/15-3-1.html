@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="startCount()" id="btn_start">開始累加</button>
+    <input type="text" id="txt" value="">
+    <button onclick="stopCount()" id="btn_end">停止累加</button>
+
+    <script>
+        var countNum = 0;
+        var t;
+        function count() {
+            document.getElementById('txt').value = countNum
+            countNum++;
+        }
+        //開始累加
+        function startCount() {
+            t = setInterval(function () {
+                count();
+            }, 1000)
+            document.getElementById("btn_start").setAttribute('disabled', true);
+            document.getElementById("btn_end").removeAttribute('disabled');
+
+
+        }
+
+        //結束累加
+        function stopCount() {
+            clearInterval(t);
+            document.getElementById("btn_end").setAttribute('disabled', true);
+            document.getElementById("btn_start").removeAttribute('disabled');
+        }
+
+
+
+    </script>
+</body>
+
+</html>
