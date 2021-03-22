@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let objPerson = {
+            name: "Bill",
+            age: "25",
+            hairColor: "black",
+            skinColor: "beige",
+        };
+        objPerson.hadShoes = true;
+        objPerson.isWoken = true;
+
+        objPerson.age = 26;
+
+        delete objPerson.skinColor;
+
+
+        //將物件轉成 JSON
+        let strJson = JSON.stringify(objPerson);
+        console.log(strJson);
+
+    </script>
+</body>
+
+</html>
