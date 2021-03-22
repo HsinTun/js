@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //一個類別所以用Person大寫
+        var Person = function (name) {
+            this.firstName = name;
+        }
+
+        Person.prototype.sayHello = function () {
+            console.log("Hello,i'm " + this.firstName);
+        }
+        var person01 = new Person('Alex');
+        var person02 = new Person('John');
+
+        console.log(person01.firstName);
+        console.log(person02.firstName);
+
+        person01.sayHello();
+        person02.sayHello();
+
+    </script>
+</body>
+
+</html>

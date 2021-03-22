@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function test() {
+            var01 = 'A';//如果是加let,var,const只能在function裡面讀到(區域變數),沒加是全域變數
+            document.write('var01=' + var01 + '<br>');
+        }
+        var var02 = 'B'
+        test();
+
+        document.write('var01=' + var01 + '<br>');
+        document.write('var02=' + var02 + '<br>');
+
+
+    </script>
+</body>
+
+</html>
