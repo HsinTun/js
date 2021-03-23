@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+            width: 10px;
+            height: 10px;
+            background-color: gray;
+            border-radius: 50%;
+        }
+
+        .wrap {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap" id="wrap"></div>
+    <div class="circle" id="circle"></div>
+
+
+
+    <script>
+        let radius = 250;
+        let circle = document.getElementById('circle');
+        let wrap = document.getElementById('wrap');
+        let degree = 0;
+        let qty = 12;
+        let moveLenght = 360 / qty;
+        let t;
+        t = setInterval(function () {
+            draw();
+        }, 500)
+
+        function draw() {
+            if (degree + moveLenght >= 360) {
+                clearInterval(t);
+            };
+            degree += moveLenght;
+
+            let wrap_left = wrap.offsetLeft;
+            let wrap_top = wrap.offsetTop;
+
+            let x = Math.cos(degree * (Math.PI / 180)) * radius;
+            circle.style.left = (wrap_left + radius + x) + "px";
+
+            var y = Math.sin(degree * (Math.PI / 180)) * radius;
+
+            circle.style.top = (wrap_top + radius - y) + "px";
+
+            circle.style.display = 'block';
+
+            let newCircle = circle.cloneNode(true);
+            document.body.appendChild(newCircle);
+
+        }
+
+    </script>
+</body>
+
+</html>

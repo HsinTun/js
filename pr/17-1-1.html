@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="javascript:OpenNewWindow();">開啟新視窗</a>
+    <a href="javascript:CloseNewWindow();">關閉新視窗</a>
+
+    <script>
+        var nywin = "";//空設定
+
+        function OpenNewWindow() {
+            myWin = window.open(
+                "https://www.iii.org.tw/",
+                "新開視窗: 資策會官網",
+                "height=600, width=800"
+
+            )
+        }
+        function CloseNewWindow() {
+            myWin.close();
+
+            if (myWin.closed) {
+                alert(`關閉了新視窗!!`);
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
