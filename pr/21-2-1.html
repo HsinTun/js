@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="myList">
+        <li>Item 01</li>
+        <li>Item 02</li>
+        <li>Item 03</li>
+    </ul>
+
+    <script>
+
+        var myList = document.getElementById('myList');// 取得容器
+
+        var newli = document.createElement('li');// 建立新的 <li> 元素
+
+        var textNode = document.createTextNode
+            ('Hello World'); // 建立 textNode 文字節點
+
+
+        newli.appendChild(textNode);
+        myList.appendChild(newli);
+
+    </script>
+</body>
+
+</html>

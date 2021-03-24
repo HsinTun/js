@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button name="btn_get" id="btn_get">使用get傳遞</button>
+    <br>
+    <button name="btn_post" id="btn_post">使用post傳遞</button>
+    <br>
+    <button name="btn_ajax" id="btn_ajax">使用ajax傳遞</button>
+    <br>
+    <br>
+    <div id="message"></div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        let div = document.querySelector('div#message');
+
+
+        $(document).ready(function () {
+
+            //使用 GET 傳遞
+            $(document).on('click', 'button#btn_get', function () {
+                $.get("https://httpbin.org/get", { 'name': 'bill', 'password': '123456' }, function (objJson) {
+                    div.innerHTML = JSON.stringify(objJson);
+                });
+            });
+
+            //使用 POST 傳遞
+
+            $(document).on('click', 'button#btn_post', function () {
+                $.post("https://httpbin.org/post", { 'name': 'bill', 'password': '123456' }).done(function (objJson) {
+
+                    div.innerHTML = JSON.stringify(objJson);
+                });
+            });
+
+            //使用 Ajax 傳遞
+            $(document).on('click', 'button#btn_ajax', function () {
+                $.ajax({
+                    method: 'POST',
+                    url: "https://httpbin.org/post",
+                    data: {
+                        postMethod: '1',
+                        name: 'bill',
+                        password: '123456'
+
+                    }
+                }).done(function (objJson) {
+                    div.innerHTML = JSON.stringify(objJson);
+                });
+            });
+
+
+
+
+
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>
