@@ -32,7 +32,7 @@
                 $.get("https://httpbin.org/get", { 'name': 'bill', 'password': '123456' }, function (objJson) {
                     div.innerHTML = JSON.stringify(objJson);
                 });
-            });
+            });//get跟post差在網址裡面會顯示,設定值{ 'name': 'bill', 'password': '123456' }get會顯示在網址,post不會顯示在網址上適合用密碼帳號
 
             //使用 POST 傳遞
 

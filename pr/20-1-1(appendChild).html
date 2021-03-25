@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appendChild</title>
+</head>
+
+<body>
+    <script>
+        var newDiv = document.createElement('div');
+        newDiv.id = 'myNewDiv'; //建立一個新的id
+
+
+        var textNode = document.createTextNode('Helloe World');
+
+        newDiv.appendChild(textNode);
+        document.body.appendChild(newDiv);
+        //沒有div下新增
+
+    </script>
+</body>
+
+</html>
