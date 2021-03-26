@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+
+    <script>
+
+        let canvas = document.getElementById('canvas')
+        let ctx = canvas.getContext('2d');//取得二維圖像的繪製環境
+
+        ctx.lineWidth = 2;
+
+        //ctx.arc(x, y, 半徑, startAngle ,Math.PI , 要不要逆時針);
+
+        let circle = function (x, y, radius) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+            ctx.stroke();
+        }
+        ctx.strokeStyle = 'lightGreen';
+        circle(100, 100, 10);
+        ctx.strokeStyle = '#aff';
+        circle(100, 100, 20);
+        ctx.strokeStyle = '#ffa';
+        circle(100, 100, 30);
+        ctx.strokeStyle = 'pink';
+        circle(100, 100, 40);
+        ctx.strokeStyle = '#7878ff';
+        circle(100, 100, 50);
+        ctx.strokeStyle = '#faf';
+        circle(100, 100, 60);
+
+    </script>
+</body>
+
+</html>

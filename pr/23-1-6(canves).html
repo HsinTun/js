@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moveTo lineTo</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+
+    <script>
+
+        let canvas = document.getElementById('canvas')
+        let ctx = canvas.getContext('2d');//取得二維圖像的繪製環境
+
+        ctx.strokeStyle = '#afa';
+        ctx.lineWidth = 4;
+        ctx.moveTo(10, 10);
+        ctx.lineTo(60, 60);
+        ctx.moveTo(60, 10);
+        ctx.lineTo(10, 60);
+
+        ctx.stroke();
+
+    </script>
+</body>
+
+</html>
