@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas {
+            border: 1px dashed #faf;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+
+    <script>
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+
+        //定義畫「實心圓形」還是畫「圓線」的函式
+        let circle = function (x, y, radius, fillCircle) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+
+            //true 就填滿，false 就畫線
+            if (fillCircle) {
+                ctx.fill();
+            } else {
+                ctx.stroke();
+            }
+        }
+        let drawBee = function (x, y) {
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = 'black';
+            ctx.fillStyle = 'gold';
+            circle(x, y, 8, true);
+            circle(x, y, 8, false);
+            circle(x - 5, y - 11, 5, false);
+            circle(x + 5, y - 11, 5, false);
+            circle(x - 2, y - 1, 2, false);
+            circle(x + 2, y - 1, 2, false);
+        }
+        let update = function (position) {
+            let offset = Math.random() * 4 - 2;
+            position += offset;
+            if (position > 200) {
+                position = 200;
+            }
+            if (position < 0) {
+                position = 0;
+            }
+            return position;
+        }
+        let x = 100;
+        let y = 100;
+        setInterval(function () {
+            ctx.clearRect(0, 0, 200, 200);
+            drawBee(x, y);
+            x = update(x);
+            y = update(y);
+            ctx.strokeRect(0, 0, 200, 200);
+
+        }, 30);
+    </script>
+</body>
+
+</html>
